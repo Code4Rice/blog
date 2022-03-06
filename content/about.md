@@ -9,7 +9,7 @@ comment: false
 mathjax: false
 ---
 
-This is the blog of Code4Rcie Team
+This is the blog of Code4Rcie Team.
 
 
 

@@ -31,4 +31,4 @@ categories: [
 ```
 
 ## 3.文章发布
-- push文章到仓库即可，已添加webhook自动更新, test webhook
+- push文章到仓库即可，已添加webhook自动更新
