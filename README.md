@@ -13,7 +13,7 @@ git clone --recurse https://github.com/Code4Rice/blog
 - 在content/post文件夹下面创建md文件即可
 - 本地校验, blog使用[hugo](https://gohugo.io/)生成，可通过hugo本地编译验证，也可以使用自己习惯的md编辑器验证(如typora, mou等）
 
-文章头部基础信息
+文章头部基础信息, tags参数可以让文章通过tag检索，categories参数可以将文章聚合到相同目录下
 ```
 ---
 author: "Spawnris"
