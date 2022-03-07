@@ -31,7 +31,7 @@ categories: [
 > 11. 编码存储上下文
 > 12. 若请求时grpc或dubbo则转发流程
 
-![](https://mmbiz.qpic.cn/sz_mmbiz_png/vibjb3KpB2aw9bfH1hDOGgGHQ8ZIPP3EIIBt5QDsJuTlvmbgZoFwWRXx7afTiallIpBDq0S0ibjS5OcuicrMtFYRFQ/0)
+![](http://localhost/sz_mmbiz_png/vibjb3KpB2aw9bfH1hDOGgGHQ8ZIPP3EIIBt5QDsJuTlvmbgZoFwWRXx7afTiallIpBDq0S0ibjS5OcuicrMtFYRFQ/0)
 
 下面我们根据上述步骤逐一详细阅读
 
@@ -199,7 +199,7 @@ apisix抽象了许多概念，有上游（upstream）、消费者（consumer）�
 
 例如灰度发布，我们在access阶段**动态根据header、url参数设置不同的上游**。亦或者我们在access阶段**直接通过私有协议完成请求工作**，不依赖apisix的balance和请求
 
-![](https://mmbiz.qpic.cn/sz_mmbiz_png/vibjb3KpB2aw9bfH1hDOGgGHQ8ZIPP3EI1BYiahDAjCL3PpZCjrAAHADbqAhpXSvGwtrSH9c6Qic5aBVTQ4Xw5PlA/0)
+![](http://localhost/sz_mmbiz_png/vibjb3KpB2aw9bfH1hDOGgGHQ8ZIPP3EI1BYiahDAjCL3PpZCjrAAHADbqAhpXSvGwtrSH9c6Qic5aBVTQ4Xw5PlA/0)
 
 此时传统的access阶段定义不能满足上述需求
 
@@ -214,4 +214,4 @@ apisix抽象了许多概念，有上游（upstream）、消费者（consumer）�
 
 **before_proxy阶段作用不限于此，仅提出相较于其他节点优势所在**
 
-![](https://mmbiz.qpic.cn/sz_mmbiz_png/vibjb3KpB2aw9bfH1hDOGgGHQ8ZIPP3EIpovOIX9ZicoEwZPv0SOyXYsm8EdbcdBUEmFqfM9XxghM16pVBO9kMcA/0)
+![](http://localhost/sz_mmbiz_png/vibjb3KpB2aw9bfH1hDOGgGHQ8ZIPP3EIpovOIX9ZicoEwZPv0SOyXYsm8EdbcdBUEmFqfM9XxghM16pVBO9kMcA/0)
