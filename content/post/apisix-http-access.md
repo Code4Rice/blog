@@ -21,10 +21,10 @@ categories: [
 > 4. 读取并合入plugin config配置
 > 5. 读取并合入service配置
 > 6. 执行全局插件
-> 7.1 如果有script则执行script，跳过第七步
-> 7.2 执行路由插件rewrite阶段
-> 7.3 如果有consumer，则合入consumer的插件
-> 7.4 执行路由插件access阶段
+> 7. 1. 如果有script则执行script，跳过第七步
+> 7. 2. 执行路由插件rewrite阶段
+> 7. 3. 如果有consumer，则合入consumer的插件
+> 7. 4. 执行路由插件access阶段
 > 8. 读取合入upstream配置
 > 9. 读取upstream节点信息（服务发现）
 > 10. 调用before_proxy阶段插件
