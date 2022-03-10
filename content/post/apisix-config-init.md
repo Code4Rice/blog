@@ -12,12 +12,13 @@ categories: [
 ---
 
 # 前言
-继 [《APISIX 源码阅读 - http init、init worker阶段》](http://code4rice.com/post/apisix-http-init) 阶段中的配置初始化部分，深入查看，apisix 是如何将本地配置初始化的。
+继 [《APISIX 源码阅读 - http init、init worker阶段》](http://code4rice.com/post/apisix-http-init) 阶段中
+的配置初始化部分，配置初始化的流程/细节。
 
 # core.config 初始化
 首先我们可以看到，apisix 的初始化分了三种类型，目录下也分为三种配置文件。
 
-```
+```shell
 |-- apisix
 |   |-- core
 |       |-- config_etcd.lua
@@ -25,7 +26,8 @@ categories: [
 |       |-- config_yaml.lua
 ```
 
-而在实际的初始化过程中，并没有指定某个类型：
+而在实际的初始化过程中，并没有指明 config 的初始化是基于 etcd 还是 yaml，
+或者是其他类型的配置中心，如下：
 
 ```lua
 -- apisix/init.lua line.83
@@ -38,7 +40,7 @@ if core.config.init then
 end
 ```
 
-为此，我们继续深入 core.config ，看看 core.config 是如何初始化的：
+为此，我们继续深入 core ，看看对应的 schema，core.config 是如何初始化的：
 
 ```lua
 -- apisix/core.lua 19
