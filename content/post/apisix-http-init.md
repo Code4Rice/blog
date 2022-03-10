@@ -1,7 +1,7 @@
 ---
 author: "Merlinlin"
 date: 2022-03-07
-title: "APISIX源码阅读 - http init、init worker阶段"
+title: "APISIX 源码阅读 - http init、init worker阶段"
 tags: [
     "apisix",
     "cloudnative",
