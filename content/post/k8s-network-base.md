@@ -31,7 +31,7 @@ categories: [
 
 容器到容器的网络是通过Pod网络命名空间实现的。网络命名空间允许我们拥有独立的网络接口和路由表，这些接口和路由表与系统的其他部分隔离，并且可以独立运行。每一个Pod都拥有自己的网络命名空间，而且Pod里的容器都共享使用相同的IP地址和端口。所有这些容器间的通信都通过localhost的方式，因为它们都属于同一个命名空间。（图中的绿线代表了这种通信方式）
 
-![](https://code4rice.com/sz_mmbiz_jpg/vibjb3KpB2ay6ErgWiaDIpbjsUorz9KQvVcltib73Z53WZQLI45TuNZN0lXuGMjr9yBQS7q7L8cAicF8QpuUXJXMcQ/0?wx_fmt=jpeg)
+![](http://code4rice.com/sz_mmbiz_jpg/vibjb3KpB2ay6ErgWiaDIpbjsUorz9KQvVcltib73Z53WZQLI45TuNZN0lXuGMjr9yBQS7q7L8cAicF8QpuUXJXMcQ/0?wx_fmt=jpeg)
 
 ---
 
@@ -67,7 +67,7 @@ K8S通过Service来解决这个问题：
 
 在下图中，Pod1到Pod3的流量路线由红色的线标注出来。请注意，传输到虚拟网桥的包必须通过默认路由(eth0)来路由，因为在网桥上运行的ARP协议并不能识别Service，然后这些数据包被iptables过滤，iptables将使用kube-proxy在节点中定义的规则。
 
-![](https://code4rice.com/sz_mmbiz_jpg/vibjb3KpB2ay6ErgWiaDIpbjsUorz9KQvVwA70mbg6T7obsELQOmYU1RsPcjdS0CbPyhYrylz4Ywd1KpkA9GGMxA/0?wx_fmt=jpeg)
+![](http://code4rice.com/sz_mmbiz_jpg/vibjb3KpB2ay6ErgWiaDIpbjsUorz9KQvVwA70mbg6T7obsELQOmYU1RsPcjdS0CbPyhYrylz4Ywd1KpkA9GGMxA/0?wx_fmt=jpeg)
 
 ---
 
@@ -79,7 +79,7 @@ K8S通过Service来解决这个问题：
 
 2. **Ingress：**这是当外网流量进入你的K8S服务时。使用一组连接规则，Ingress还允许和阻止与服务的特定通信。通常，有两个入口解决方案在不同的网络堆栈区起作用：服务负载平衡器（Service load balancer）和入口控制器（Ingress controller）。
 
-   ![](https://code4rice.com/sz_mmbiz_jpg/vibjb3KpB2ay6ErgWiaDIpbjsUorz9KQvVlmKHGkr9ibzFd7tcx8N6GZodp0w6wR67wA8HVgBOKeqbSm4vBIfd6aw/0?wx_fmt=jpeg)
+   ![](http://code4rice.com/sz_mmbiz_jpg/vibjb3KpB2ay6ErgWiaDIpbjsUorz9KQvVlmKHGkr9ibzFd7tcx8N6GZodp0w6wR67wA8HVgBOKeqbSm4vBIfd6aw/0?wx_fmt=jpeg)
 
 ---
 
