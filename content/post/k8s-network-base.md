@@ -79,7 +79,7 @@ K8S通过Service来解决这个问题：
 
 2. **Ingress：**这是当外网流量进入你的K8S服务时。使用一组连接规则，Ingress还允许和阻止与服务的特定通信。通常，有两个入口解决方案在不同的网络堆栈区起作用：服务负载平衡器（Service load balancer）和入口控制器（Ingress controller）。
 
-   ![](http://code4rice.com/sz_mmbiz_jpg/vibjb3KpB2ay6ErgWiaDIpbjsUorz9KQvVlmKHGkr9ibzFd7tcx8N6GZodp0w6wR67wA8HVgBOKeqbSm4vBIfd6aw/0?wx_fmt=jpeg)
+![](http://code4rice.com/sz_mmbiz_jpg/vibjb3KpB2ay6ErgWiaDIpbjsUorz9KQvVlmKHGkr9ibzFd7tcx8N6GZodp0w6wR67wA8HVgBOKeqbSm4vBIfd6aw/0?wx_fmt=jpeg)
 
 ---
 
@@ -90,13 +90,13 @@ K8S有两种方式来进行服务发现：
 1. **环境变量：**在Pod运行的节点上运行的kubelet服务负责为每个活跃的服务设置环境变量，设置的格式是{SVCNAME}\_SERVICE_HOST & {SVCNAME}_SERVICE_POST。在Pods创建之前需要创建Service，否则这些Posd不会填充它们的环境变量。
 2. **DNS：**DNS服务是一种K8S服务的类型，映射到一个或多个DNS服务pod上，和其他pod一样被正常调度。集群中的pod可以配置使用DNS服务，有一个DNS搜索列表，包含了pod自己的命名空间和集群的默认域名。一个支持集群DNS的服务，例如CoreDNS，监听K8S的API，每当有新服务创建时，为每个服务创建一组DNS记录。如果DNS已经在整个集群被使用，那么这个集群里的所有pod都能够通过服务的DNS名称自动解析服务。K8S的DNS服务器是访问ExternalName服务的唯一方法（ExternalName服务是一种特殊服务，它没有选择器selector，而是使用DNS名字）。
 
----///////////////
+---
 
 ### 服务类型
 
 K8S为我们提供了一种访问一组Pod的方法，一组pod通常可以使用标签选择器来定义。这使得我们可以在集群内的应用之间访问，或者允许应用暴露在外网访问的环境中。K8S的ServiceTypes允许你指定想要的服务类型。
 
-![](https://mmbiz.qpic.cn/sz_mmbiz_png/vibjb3KpB2ay6ErgWiaDIpbjsUorz9KQvVpzoLdM9Iqcnm0Zl2hwtwyNRKP5mu97ndl6zuwxxLsHDZCETS3fUk0Q/0?wx_fmt=png)
+![](http://mmbiz.qpic.cn/sz_mmbiz_png/vibjb3KpB2ay6ErgWiaDIpbjsUorz9KQvVpzoLdM9Iqcnm0Zl2hwtwyNRKP5mu97ndl6zuwxxLsHDZCETS3fUk0Q/0?wx_fmt=png)
 
 有这么几种ServiceTypes：
 
